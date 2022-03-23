@@ -178,8 +178,8 @@ export default function Home() {
       </Head>
       <div className={styles.main}>
         <div>
-          <h1 ><span className={styles.title}>Hello friend, Welcome to</span> 
-          <span><img classname={styles.hexa} src="./HEXZA1.png" /></span>
+          <h1 className={styles.title}>Hello friend, Welcome to 
+          <span><img className={styles.hexa} src="./HEXZA1.png" alt="Logo text" /></span>
           </h1>
           <div className={styles.description}>
             This is an NFT collection for Developers, Designers,
@@ -197,7 +197,8 @@ export default function Home() {
       </div>
 
       <footer className={styles.footer}>
-        Made with &#10084; by HEXZA
+        Made with &#10084; by
+        <span><img className={styles.hexan} src="./HEXZA1.png" alt="Logo text" /></span>
       </footer>
     </div>
   );

@@ -9,8 +9,7 @@
 }
 
 .hexa{
-  width: 20px;
-  margin-left: 100px;
+  margin-left: 10px;
 }
 
 .footer {
@@ -19,6 +18,11 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+}
+
+.hexan{
+  width: 50px;
+  margin-left: 10px;
 }
 
 .image {
@@ -30,7 +34,6 @@
 .title {
   font-size: 2rem;
   margin: 2rem 0;
-  margin-right: 10px;
 }
 
 .description {
