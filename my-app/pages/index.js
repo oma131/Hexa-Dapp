@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { WHITELIST_CONTRACT_ADDRESS, abi } from "../constants";
 
 export default function Home() {
+  const [darkTheme, setDarkTheme] = useState(undefined);
   
   const [walletConnected, setWalletConnected] = useState(false);
   
@@ -16,6 +17,10 @@ export default function Home() {
   const [numberOfWhitelisted, setNumberOfWhitelisted] = useState(0);
   
   const web3ModalRef = useRef();
+  
+  const handleToggle = (event) => {
+    setDarkTheme(event.target.checked);
+  };
 
   /**
    * Returns a Provider or Signer object representing the Ethereum RPC with or without the
@@ -157,6 +162,28 @@ export default function Home() {
       );
     }
   };
+  useEffect(() => {
+    if (darkTheme !== undefined) {
+      if (darkTheme) {
+        // Set value of  darkmode to dark
+        document.documentElement.setAttribute('data-theme', 'dark');
+        window.localStorage.setItem('theme', 'dark');
+      } else {
+        // Set value of  darkmode to light
+        document.documentElement.removeAttribute('data-theme');
+        window.localStorage.setItem('theme', 'light');
+      }
+    }
+  }, [darkTheme]);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const initialColorValue = root.style.getPropertyValue(
+      '--initial-color-mode'
+    );
+    // Set initial darkmode to light
+    setDarkTheme(initialColorValue === 'dark');
+  }, []);
 
   useEffect(() => {
     if (!walletConnected) {
@@ -199,6 +226,20 @@ export default function Home() {
       <footer className={styles.footer}>
         Made with &#10084; by
         <span><img className={styles.hexan} src="./HEXZA1.png" alt="Logo text" /></span>
+        <div>
+            {darkTheme !== undefined && (
+              <form action="#">
+                <label className="switch">
+                  <input
+                    type="checkbox"
+                    checked={darkTheme}
+                    onChange={handleToggle}
+                  />
+                  <span className="slider"></span>
+                </label>
+              </form>
+            )}
+        </div>
       </footer>
     </div>
   );
