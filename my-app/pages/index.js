@@ -15,10 +15,13 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   
   const [numberOfWhitelisted, setNumberOfWhitelisted] = useState(0);
-  
+
   const web3ModalRef = useRef();
-  
-  const handleToggle = (event) => {
+
+  /**
+   * handleToggle: changed background from light thean to dark theme
+   */
+   const handleToggle = (event) => {
     setDarkTheme(event.target.checked);
   };
 
@@ -140,16 +143,16 @@ export default function Home() {
     if (walletConnected) {
       if (joinedWhitelist) {
         return (
-          <div className={styles.description}>
+          <div className={styles.buttonDescription}>
             Yay! You have been whitelisted
             <span role="img" aria-label="sheep">🎉🎉</span>
           </div>
         );
       } else if (loading) {
-        return <button className={styles.button}>Loading...</button>;
+        return <button className={styles.load}>Loading...</button>;
       } else {
         return (
-          <button onClick={addAddressToWhitelist} className={styles.button}>
+          <button onClick={addAddressToWhitelist} className={styles.click}>
             Join the Whitelist
           </button>
         );
@@ -162,6 +165,7 @@ export default function Home() {
       );
     }
   };
+
   useEffect(() => {
     if (darkTheme !== undefined) {
       if (darkTheme) {
@@ -196,50 +200,58 @@ export default function Home() {
     }
   }, [walletConnected]);
 
+
   return (
     <div>
       <Head>
-        <title>Whitelist Dapp</title>
+        <title>HEXZA Whitelist</title>
         <meta name="description" content="Whitelist-Dapp" />
         <link rel="icon" href="/mainicon.svg" />
       </Head>
-      <div className={styles.main}>
-        <div>
-          <h1 className={styles.title}>Hello friend, Welcome to 
-          <span><img className={styles.hexa} src="./HEXZA1.png" alt="Logo text" /></span>
-          </h1>
-          <div className={styles.description}>
-            This is an NFT collection for Developers, Designers,
-            Web3 Enthusiast and Crypto-lovers.
-          </div>
-          <div className={styles.description}>
-            {numberOfWhitelisted} have already joined the Whitelist,
-            and we are excited to have you onboard
-          </div>
-          {renderButton()}
+      <div className={styles.container}>
+        <div className={styles.logo}>
+          <img className={styles.big} src="./biglogo.png" alt="Logo text" />
         </div>
-        <div>
-          <img className={styles.image} src="./crypto-devs.svg" />
+        <div className={styles.main}>
+          <div>
+            <h1 className={styles.title}>Hello friend, Welcome to 
+            <span><img className={styles.hexa} src="./HEXZA1.png" alt="Logo text" /></span>
+            </h1>
+            <div className={styles.description}>
+              This is an NFT collection for Developers, Designers,
+              Web3 Enthusiast and Crypto-lovers.
+            </div>
+            <div className={styles.description}>
+              {numberOfWhitelisted} have already joined the Whitelist,
+              and we are excited to have you onboard
+            </div>
+            {renderButton()}
+          </div>
+          <div>
+            <img className={styles.image} src="./crypto-devs.svg" />
+          </div>
         </div>
       </div>
-
+      
       <footer className={styles.footer}>
-        Made with &#10084; by
-        <span><img className={styles.hexan} src="./HEXZA1.png" alt="Logo text" /></span>
-        <div>
-            {darkTheme !== undefined && (
-              <form action="#">
-                <label className="switch">
-                  <input
-                    type="checkbox"
-                    checked={darkTheme}
-                    onChange={handleToggle}
-                  />
-                  <span className="slider"></span>
-                </label>
-              </form>
-            )}
+        <div className={styles.pack}>
+          Made with &#10084; by
+          <span><img className={styles.hexan} src="./HEXZA1.png" alt="Logo text" /></span>
         </div>
+        <div className={styles.checker}>
+        {darkTheme !== undefined && (
+          <form action="#">
+            <label className="switch">
+              <input
+                type="checkbox"
+                checked={darkTheme}
+                onChange={handleToggle}
+              />
+              <span className="slider"></span>
+            </label>
+          </form>
+        )}
+      </div>
       </footer>
     </div>
   );
