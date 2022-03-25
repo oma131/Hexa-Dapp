@@ -1,11 +1,26 @@
-.main {
+.container{
+  background-color: #0000;
   min-height: 90vh;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.main {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-family: "Courier New", Courier, monospace;
   padding-left: 30px;
+  margin-top: 7%;
+}
+
+.big{
+  width: 10%;
+}
+
+.logo{
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .hexa{
@@ -16,6 +31,11 @@
   display: flex;
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
+  align-items: center;
+}
+.pack{
+  width: 90%;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -41,10 +61,24 @@
   margin: 2rem 0;
   font-size: 1.2rem;
 }
+.buttonDescription {
+  /* Created with https://www.css-gradient.com */
+  background: #00FFF1;
+  background: -webkit-linear-gradient(bottom right, #00FFF1, #AE00FF);
+  background: -moz-linear-gradient(bottom right, #00FFF1, #AE00FF);
+  background: linear-gradient(to top left, #00FFF1, #AE00FF);
+  line-height: 1;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+}
 
 .button {
-  border-radius: 4px;
-  background-color: blue;
+  border-radius: 25px;
+  /* Created with https://www.css-gradient.com */
+  background: #00FFF1;
+  background: -webkit-linear-gradient(left, #00FFF1, #AE00FF);
+  background: -moz-linear-gradient(left, #00FFF1, #AE00FF);
+  background: linear-gradient(to right, #00FFF1, #AE00FF);
   border: none;
   color: #ffffff;
   font-size: 15px;
@@ -53,11 +87,74 @@
   cursor: pointer;
   margin-bottom: 2%;
 }
+@media (max-width: 650px) {
+  .button {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+  }
+  .big{
+    width: 20%;
+  }
+  .hexa{
+    margin-left: 0;
+  }
+  .image{
+    margin-top: 30px;
+  }
+  .footer{
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.click {
+  border-radius: 25px;
+  /* Created with https://www.css-gradient.com */
+  background: #00FFF1;
+  background: -webkit-linear-gradient(right, #00FFF1, #AE00FF);
+  background: -moz-linear-gradient(right, #00FFF1, #AE00FF);
+  background: linear-gradient(to left, #00FFF1, #AE00FF);
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 20px;
+  width: 200px;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+.load {
+  border-radius: 25px;
+  /* Created with https://www.css-gradient.com */
+  background: #78B1AE;
+  background: -webkit-linear-gradient(right, #78B1AE, #9F86AB);
+  background: -moz-linear-gradient(right, #78B1AE, #9F86AB);
+  background: linear-gradient(to left, #78B1AE, #9F86AB);
+  border: none;
+  color: #0000;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 20px;
+  width: 200px;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+.button:hover{
+  /* Created with https://www.css-gradient.com */
+  background: #00FFF1;
+  background: -webkit-linear-gradient(right, #00FFF1, #AE00FF);
+  background: -moz-linear-gradient(right, #00FFF1, #AE00FF);
+  background: linear-gradient(to left, #00FFF1, #AE00FF);
+}
 @media (max-width: 1000px) {
   .main {
     width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 10px;
   }
 }
