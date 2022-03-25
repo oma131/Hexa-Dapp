@@ -61,16 +61,7 @@
   margin: 2rem 0;
   font-size: 1.2rem;
 }
-.buttonDescription {
-  /* Created with https://www.css-gradient.com */
-  background: #00FFF1;
-  background: -webkit-linear-gradient(bottom right, #00FFF1, #AE00FF);
-  background: -moz-linear-gradient(bottom right, #00FFF1, #AE00FF);
-  background: linear-gradient(to top left, #00FFF1, #AE00FF);
-  line-height: 1;
-  margin: 2rem 0;
-  font-size: 1.2rem;
-}
+
 
 .button {
   border-radius: 25px;
@@ -134,7 +125,6 @@
   background: -moz-linear-gradient(right, #78B1AE, #9F86AB);
   background: linear-gradient(to left, #78B1AE, #9F86AB);
   border: none;
-  color: #0000;
   font-size: 15px;
   font-weight: bold;
   padding: 20px;

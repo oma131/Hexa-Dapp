@@ -143,7 +143,7 @@ export default function Home() {
     if (walletConnected) {
       if (joinedWhitelist) {
         return (
-          <div className={styles.buttonDescription}>
+          <div className={styles.description}>
             Yay! You have been whitelisted
             <span role="img" aria-label="sheep">🎉🎉</span>
           </div>
