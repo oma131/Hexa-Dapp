@@ -37,6 +37,19 @@ a {
   --color-anchor: #00ff4c;
 }
 
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
 
 /* swtich taken from W3 schools */
 
@@ -98,4 +111,3 @@ input:checked + .slider:before {
 .slider:before {
   border-radius: 50%;
 }
-
