@@ -56,4 +56,5 @@ function setInitialColorMode() {
     document.documentElement.setAttribute('data-theme', 'dark');
 }
 
+
 export default MyDocument;
