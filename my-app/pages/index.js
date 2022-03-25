@@ -219,7 +219,8 @@ export default function Home() {
             </h1>
             <div className={styles.description}>
               This is an NFT collection for Developers, Designers,
-              Web3 Enthusiast and Crypto-lovers.
+              Web3 Enthusiast and Crypto-lovers. Only 10 whitelist spots
+              available join now.
             </div>
             <div className={styles.description}>
               {numberOfWhitelisted} have already joined the Whitelist,
